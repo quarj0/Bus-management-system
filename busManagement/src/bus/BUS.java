@@ -57,7 +57,7 @@ public class BUS extends JFrame implements ActionListener {
    add(p1);
     p1.setBackground(getBackground());
     //getContentPane().setBackground(Color.pink);
-    JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\tor-bus.jpg"));
+    JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\tor-bus.jpg"));
     img.setBounds(0,0,1280,720);
      getContentPane().add(img);
         
@@ -95,7 +95,7 @@ public class BUS extends JFrame implements ActionListener {
                     try
                     {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali")) {
+                        try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo")) {
                             String str1 = UserField.getText();
                             String str2= PassField.getText();
                             String str3 = "select userN,pass from users where UserN ='"+str1+"'";
@@ -211,7 +211,7 @@ public class BUS extends JFrame implements ActionListener {
         user =  new JButton("user");
         user.setBounds(10,10,70,50);
         user.addActionListener(this);
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\table.png"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\table.png"));
         img.setBounds(0,0,1280,720);
          getContentPane().add(img);
         
@@ -235,7 +235,7 @@ public class BUS extends JFrame implements ActionListener {
                     try
                      {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                         String  from = (String) FromCB.getSelectedItem();
                         String  dest = (String) DestCB.getSelectedItem();
                         String sql = "select BUS_id,BUS_name,source,Destination,cost from buses where source = '"+from+"' and destination = '"+dest+"';";
@@ -325,7 +325,7 @@ public class BUS extends JFrame implements ActionListener {
                 try
                 {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                     String str1 = "select * from buses;";
                     PreparedStatement pst = conn.prepareStatement(str1);
                     ResultSet rs = pst.executeQuery();
@@ -396,7 +396,7 @@ public class BUS extends JFrame implements ActionListener {
         save.setBounds(450,560,100,30);
         add(save);
         save.addActionListener(this);
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\road.jpg"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\road.jpg"));
         img.setBounds(0,0,1280,720);
         getContentPane().add(img);
         
@@ -419,7 +419,7 @@ public class BUS extends JFrame implements ActionListener {
             {
                 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 Statement st = conn.createStatement();
                 PreparedStatement pst = conn.prepareStatement("insert into users values(?,?,?,?,?);");
                 pst.setString(1,ss);
@@ -461,7 +461,7 @@ class seats extends JFrame implements ActionListener{
         int q=0;
         try{
              Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 String str = "select * from reserved where busid=?";
                 
                 PreparedStatement pst = conn.prepareStatement(str);
@@ -509,7 +509,7 @@ class seats extends JFrame implements ActionListener{
             back.setBounds(350,550,100,30);
             add(back);
             back.addActionListener(this);
-            JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\tor-bus.jpg"));
+            JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\tor-bus.jpg"));
             img.setBounds(0,0,1280,720);
              getContentPane().add(img);
         setSize(1280,720);
@@ -627,7 +627,7 @@ public Address(int selected,int id)
     AProcced.setBounds(400,700,100,30);
    // add(AProcced);
     AProcced.addActionListener(this);
-    JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\table.png"));
+    JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\table.png"));
     img.setBounds(0,0,1280,720);
      getContentPane().add(img);
     setSize(1280,720);
@@ -651,7 +651,7 @@ public Address(int selected,int id)
             {
                 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 
                 PreparedStatement pst = conn.prepareStatement("insert into userData values(?,?,?,?,?);");
                 pst.setString(1,Anametf.getText());
@@ -721,7 +721,7 @@ class payment extends JFrame implements ActionListener{
         JB2 = new JButton("cancel");
         JB2.setBounds(300,420,100,30);
         add(JB2);
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\pay.jpeg"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\pay.jpeg"));
         img.setBounds(0,0,640,480);
          getContentPane().add(img);
         JB2.addActionListener(this);
@@ -740,7 +740,7 @@ class payment extends JFrame implements ActionListener{
         try{
          
         Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                // String str8 = 
                 PreparedStatement pst,pst2;
                 pst= conn.prepareStatement("insert into payment values(?,?,?,?)");
@@ -813,7 +813,7 @@ public AdminLogin()
     add(AdminUserField);
     add(AdminPassField);
     add(Adminlogin);
-    JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\admin.jpg"));
+    JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\admin.jpg"));
     img.setBounds(0,0,1280,720);
      getContentPane().add(img);
     
@@ -834,7 +834,7 @@ public AdminLogin()
               String str2 = AdminPassField.getText();
               String str3 = "select userName,Passd from Adminusers where userName = '"+str1+"'";
              Class.forName("com.mysql.cj.jdbc.Driver");
-               Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+               Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
               Statement ps = conn.createStatement();
               ResultSet rs = ps.executeQuery(str3);
               while(rs.next())
@@ -930,7 +930,7 @@ public AdminLogin()
       Adminlogout.setBounds(750,50,100,30);
       add(Adminlogout);
       Adminlogout.addActionListener(this);
-      JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\admin.jpg"));
+      JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\admin.jpg"));
       img.setBounds(0,0,1280,720);
        getContentPane().add(img);
       setSize(1280,720);
@@ -947,7 +947,7 @@ public AdminLogin()
             try
         {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 String str1 = "select * from buses;";
                 PreparedStatement pst = conn.prepareStatement(str1);
                 ResultSet rs = pst.executeQuery();
@@ -967,7 +967,7 @@ public AdminLogin()
            try
         {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 String str2 = "select * from drivers;";
                 PreparedStatement pst = conn.prepareStatement(str2);
                 ResultSet rs1 = pst.executeQuery();
@@ -1005,7 +1005,7 @@ class Adnxtpage extends JFrame implements ActionListener{
 
     public Adnxtpage()       
     {
-//        img = new JLabel(new ImageIcon("C:\\Users\\sasi\\OneDrive\\Desktop\\pro4.jpg"));
+//        img = new JLabel(new ImageIcon("C:\\Users\\bus\\OneDrive\\Desktop\\pro4.jpg"));
 //        img.setBounds(0,0,900,900);
        // add(img);
         pay = new JButton("PAYMENT DETAILS");
@@ -1037,7 +1037,7 @@ class Adnxtpage extends JFrame implements ActionListener{
         add(backb);
         backb.addActionListener(this);
         setSize(1280,720);
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\pay.jpeg"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\pay.jpeg"));
         img.setBounds(0,0,1280,720);
          getContentPane().add(img);
         setLayout(null);
@@ -1053,7 +1053,7 @@ class Adnxtpage extends JFrame implements ActionListener{
              try
         {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 String str3 = "select * from payment;";
                 PreparedStatement pst = conn.prepareStatement(str3);
                 ResultSet rs3 = pst.executeQuery();
@@ -1092,7 +1092,7 @@ class modifications extends JFrame implements ActionListener{
         back.addActionListener(this);
         getContentPane().setBackground(Color.pink);
 //         setTitle("");
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\road.jpg"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\road.jpg"));
         img.setBounds(0,0,1280,720);
          getContentPane().add(img);
         setSize(1280,720);
@@ -1169,7 +1169,7 @@ class buses_1 extends JFrame implements ActionListener {
          can.setBounds(200,600,100,30);
          add(can);
          can.addActionListener(this);
-         JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\road.jpg"));
+         JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\road.jpg"));
          img.setBounds(0,0,1280,720);
           getContentPane().add(img);
         setSize(1280,720);
@@ -1185,7 +1185,7 @@ class buses_1 extends JFrame implements ActionListener {
             {
                 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                 
                 PreparedStatement pst = conn.prepareStatement("insert into buses values(?,?,?,?,?,?);");
                 pst.setString(1,Bid.getText());
@@ -1232,7 +1232,7 @@ class deleteBuses extends JFrame implements ActionListener{
         add(del);
         del.addActionListener(this);
         getContentPane().setBackground(Color.pink);
-        JLabel   img=new JLabel(new ImageIcon("D:\\busManagement\\res\\images\\photo.gif"));
+        JLabel   img=new JLabel(new ImageIcon("C:\\Users\\owusu\\OneDrive\\Desktop\\java-bus\\Bus-management-system\\busManagement\\res\\images\\photo.gif"));
         img.setBounds(0,0,620,349);
          getContentPane().add(img);
         setTitle("deletion");
@@ -1251,7 +1251,7 @@ class deleteBuses extends JFrame implements ActionListener{
                int a =Integer.parseInt(box.getText());
                 String s = "delete from buses where BUS_id='"+a+"';";
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                 java.sql.Connection c= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sasi","cyber","kali");
+                 java.sql.Connection c= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bus","root","quarjo");
                   Statement ps = c.createStatement();
                 
                  ps.executeUpdate(s);
